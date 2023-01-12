@@ -42,6 +42,8 @@ To run the test suite, use the following command:
 * [Node.js](https://nodejs.org/) - JavaScript runtime
 * [Express](https://expressjs.com/) - Web framework for Node.js
 * [Nodemon](https://nodemon.io/) - a utility that will monitor for any changes in your source and automatically restart your server
+* [Prisma](https://www.prisma.io/) - ORM to connect to the database
+* [MySQL](https://www.mysql.com/) - Database
 
 ### Author
 
