@@ -1,0 +1,56 @@
+<%-include("header")%>
+    <div class="panel">
+        <div class="panel-header">
+            <i class="fa-sharp fa-solid fa-chart-simple"></i> Report Stock
+        </div>
+        <div class="panle-body">
+            <form method="post">
+                <div style="display: inline-block">
+                    <label for="from">From Date</label>
+                    <input type="date" name="from" id="from" value="<%= from %>">
+                </div>
+                <div style="display: inline-block">
+                    <label for="to">To Date</label>
+                    <input type="date" name="to" id="to" value="<%= to %>">
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-solid fa-check"></i> Show data
+                </button>
+            </form>
+
+            <div>&nbsp;</div>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="100px">Barcode</th>
+                        <th>Product Name</th>
+                        <th width="120px">Import Count</th>
+                        <th width="120px">Export Count</th>
+                        <th width="100px">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% products.forEach(item=> { %>
+                        <tr>
+                            <td>
+                                <%= item.barcode %>
+                            </td>
+                            <td>
+                                <%= item.name %>
+                            </td>
+                            <td style="text-align: right;">
+                                <%= item.total_import %>
+                            </td>
+                            <td style="text-align: right;">
+                                <%= item.total_out %>
+                            </td>
+                            <td style="text-align: right;">
+                                <%= item.total_import - item.total_out %>
+                            </td>
+                        </tr>
+                        <%});%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <%-include("footer")%>

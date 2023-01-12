@@ -1,0 +1,54 @@
+<%- include("header") %>
+    <div class="panel">
+        <div class="panel-header">
+            <i class="fa-solid fa-table-cells"> Products</i>
+        </div>
+        <div class="panel-body">
+            <form method="post">
+                <div>
+                    <label for="barcode">Barcode</label>
+                    <input type="text" name="barcode" id="barcode" value="<%=data.barcode%>" />
+                </div>
+                <div>
+                    <label for="name">Product name</label>
+                    <input type="text" name="name" id="name" value="<%=data.name%>" />
+                </div>
+                <button type="submit" class="btn">
+                    <i class="fa-solid fa-check">
+                        Save
+                    </i>
+                </button>
+            </form>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th width="100px">Barcode</th>
+                <th>Product Name</th>
+                <th width="110px"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(item=> { %>
+                <tr>
+                    <td>
+                        <%=item.barcode %>
+                    </td>
+                    <td>
+                        <%=item.name %>
+                    </td>
+                    <td style="text-align: center;">
+                        <a href="/productEdit/<%=item.id%>" class="btn">
+                            <i class="fa-solid fa-pencil"></i>
+                        </a>
+                        <a href="/productDelete/<%=item.id%>" class="btn btn-danger"
+                            onclick="return confirm('Delete ?')">
+                            <i class="fa-solid fa-close"></i>
+                        </a>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+    <%- include("footer") %>

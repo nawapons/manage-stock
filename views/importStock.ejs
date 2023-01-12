@@ -1,0 +1,55 @@
+<%-include("header")%>
+    <script>
+        async function searchProduct() {
+            let barcode = document.getElementById("barcode");
+            let product_id = document.getElementById("product_id")
+            let name = document.getElementById("name");
+            let body = JSON.stringify({
+                barcode: barcode.value,
+            });
+            try {
+                const response = await fetch('searchProduct', {
+                    method: "POST",
+                    body: body,
+                    headers: {
+                        "Content-Type": "application/json",
+                    }
+                });
+                const data = await response.json();
+                if (data.length > 0) {
+                    product_id.value = data[0].id;
+                    name.value = data[0].name;
+                } else {
+                    alert("Barcode not found! Please try again");
+                    name.value = ""
+                }
+            } catch (err) {
+                console.log(err);
+            }
+        }
+    </script>
+
+    <div class="panel">
+        <div class="panel-header">
+            <i class="fa-sharp fa-solid fa-arrow-down"></i>
+            Import Product
+        </div>
+        <div class="panel-body">
+            <form method="post">
+                <div>
+                    <label for="barcode">Barcode</label>
+                    <input type="text" name="barcode" id="barcode" onblur="searchProduct()">
+                    <input type="text" disabled name="name" id="name" size="70">
+                    <input type="hidden" name="product_id" id="product_id">
+                </div>
+                <div>
+                    <label for="qty">Quantity</label>
+                    <input type="text" name="qty" id="qty">
+                </div>
+                <button class="btn">
+                    <i class="fa-solid fa-check"></i> Save
+                </button>
+            </form>
+        </div>
+    </div>
+    <%- include("footer")%>

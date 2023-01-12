@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model tb_product {
+  id      Int    @id @default(autoincrement())
+  barcode String
+  name    String
+  
+}
+
+model tb_import_stock {
+  id          Int      @id @default(autoincrement())
+  product_id  Int
+  qty         Int
+  import_date DateTime
+}
+
+model tb_outstock {
+  id Int @id @default(autoincrement())
+  product_id Int
+  qty Int
+  outdate DateTime
+}
