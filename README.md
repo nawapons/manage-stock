@@ -1,45 +1,48 @@
-usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
-           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
-           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-           [--super-prefix=<path>] [--config-env=<name>=<envvar>]
-           <command> [<args>]
+# Manage Stock
 
-These are common Git commands used in various situations:
+This is a simple Node.js and Express application that serves as a starting point for building web applications that manage stock. The application allows the user to add, update and delete stock items, as well as view a list of all the items in the stock.
 
-start a working area (see also: git help tutorial)
-   clone     Clone a repository into a new directory
-   init      Create an empty Git repository or reinitialize an existing one
+## Getting Started
 
-work on the current change (see also: git help everyday)
-   add       Add file contents to the index
-   mv        Move or rename a file, a directory, or a symlink
-   restore   Restore working tree files
-   rm        Remove files from the working tree and from the index
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-examine the history and state (see also: git help revisions)
-   bisect    Use binary search to find the commit that introduced a bug
-   diff      Show changes between commits, commit and working tree, etc
-   grep      Print lines matching a pattern
-   log       Show commit logs
-   show      Show various types of objects
-   status    Show the working tree status
+### Prerequisites
 
-grow, mark and tweak your common history
-   branch    List, create, or delete branches
-   commit    Record changes to the repository
-   merge     Join two or more development histories together
-   rebase    Reapply commits on top of another base tip
-   reset     Reset current HEAD to the specified state
-   switch    Switch branches
-   tag       Create, list, delete or verify a tag object signed with GPG
+You will need to have Node.js and npm (Node Package Manager) installed on your system.
 
-collaborate (see also: git help workflows)
-   fetch     Download objects and refs from another repository
-   pull      Fetch from and integrate with another repository or a local branch
-   push      Update remote refs along with associated objects
+### Installing
 
-'git help -a' and 'git help -g' list available subcommands and some
-concept guides. See 'git help <command>' or 'git help <concept>'
-to read about a specific subcommand or concept.
-See 'git help git' for an overview of the system.
+Clone the repository and install the dependencies.
+
+`git clone https://github.com/nawapons/manage-stock.git
+cd manage-stock
+npm install`
+
+You should also install nodemon by running
+
+`npm install -g nodemon`
+
+### Running the application
+
+Start the application by running the following command:
+
+`npx nodemon`
+
+The application will be running at http://localhost:3000
+
+### Running the tests
+
+To run the test suite, use the following command:
+
+`npm test`
+
+
+### Built With
+
+* [Node.js](https://nodejs.org/) - JavaScript runtime
+* [Express](https://expressjs.com/) - Web framework for Node.js
+* [Nodemon](https://nodemon.io/) - a utility that will monitor for any changes in your source and automatically restart your server
+
+### Author
+
+* **Nawapon Sompinta** - [nawapons](https://github.com/nawapons)
