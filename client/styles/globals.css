@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Caskaydia Cove Light';
+    src: url('/fonts/CaskaydiaCove-Light.ttf') format('truetype');
+}
+
+body {
+    background-color: #2A303C;
+    font-family: 'CaskaydiaCove NF'
+}
+.footer{
+    position:absolute;
+    bottom: 0;
+}
+table tr{
+    text-align: center;
+}
