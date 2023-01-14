@@ -27,13 +27,13 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link href="/importstock">
+                        <Link href="/import">
                             <TbPackgeImport />
                             Import Stock
                         </Link>
                     </li>
                     <li>
-                        <Link href="/exportstock">
+                        <Link href="/export">
                             <TbPackgeExport />
                             Export Stock
                         </Link>

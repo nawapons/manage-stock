@@ -11,10 +11,13 @@ body {
     background-color: #2A303C;
     font-family: 'CaskaydiaCove NF'
 }
-.footer{
-    position:absolute;
+
+.footer {
+    position: absolute;
     bottom: 0;
 }
-table tr{
+
+
+table tr {
     text-align: center;
 }
